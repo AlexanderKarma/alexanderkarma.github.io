@@ -1,0 +1,307 @@
+@import "fonts"
+@import "libs"
+@import "base"
+@import "vars"
+
+// Пользовательские стили
+
+.grid
+	display: grid
+
+.container
+	width: 100%
+	padding-right: 10px
+	padding-left: 10px
+	margin-right: auto
+	margin-left: auto
+
+.main-head
+	background-size: cover
+	background-position: center
+	position: relative
+	align-content: center
+	color: white
+	&::before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: $accent
+		opacity: .92
+
+.header-content
+	z-index: 1
+	display: grid
+	grid-template-areas: "lg" "con"
+	max-width: 1000px
+	width: 100%
+	padding-right: 10px
+	padding-left: 10px
+	margin-right: auto
+	margin-left: auto
+	.logo
+		margin-top: auto
+		margin-bottom: auto
+		margin-right: 0
+		float: left
+		z-index: 1
+		grid-area: lg
+	.content
+		z-index: 1
+		grid-area: con
+
+.content
+	max-width: 1000px
+	padding-left: 20px
+	padding-right: 20px 
+	padding-bottom: 20px
+	margin-top: 30px
+	margin-right: auto
+	margin-left: auto
+	align-items: center
+
+.master
+	min-height: 60vh
+	align-content: center
+	text-align: center
+	ul
+		text-align: left
+
+.intro
+	display: grid
+	grid-template-columns: 60% 40%
+	grid-gap: 25px
+
+.aft-mk
+	padding-left: 30px
+	background-color: $accent
+	color: white
+	.content
+		grid-template-columns: 60% 40%
+		align-content: center
+		min-height: 60vh
+		padding-bottom: 0px
+	img
+		max-height: 500px
+	button
+		margin-bottom: 15px
+
+.content
+	.points
+		justify-content: center
+		min-height: 50vh
+
+.about
+	justify-content: center
+	h2
+		text-align: center
+	.img
+		display: inline-block
+		text-align: center
+	img
+		max-height: 300px
+	.about-grid
+		grid-template-columns: 40% 60%
+	li
+		position: relative
+		border-left: 3px solid $but
+		&::before
+
+
+.review
+	h2
+		text-align: center
+	.bt
+		margin-top: 30px
+		text-align: center
+	.revs
+		display: grid
+		grid-gap: 20px
+		grid-template-columns: 1fr 1fr 1fr
+		.rev-1
+			display: grid
+			grid-template-areas: "ph nm" "ph pr" "lr lr"
+			min-height: 400px
+			padding-left: 20px
+			padding-right: 20px 
+			padding-top: 30px
+			margin-right: auto
+			margin-left: auto
+			border-radius: 1px
+			box-shadow: 1px 1px 1px 2px #0912b2
+			.photo
+				grid-area: ph
+				img
+					max-width: 100px
+			.name
+				grid-area: nm
+				margin: 0
+				font-size: 18px
+			.prof
+				grid-area: pr
+				margin: 0
+				font-size: 15px
+			.lor
+				grid-area: lr
+				font-size: 14px
+
+.reg
+	display: grid
+	grid-template-columns: 20% 1fr 30%
+	align-items: center
+	img
+		display: inline-block
+		max-width: 150px
+
+	p
+		margin-right: 20px
+		margin-left: 20px
+
+.foot
+	background-color: $accent
+	color: white
+	min-height: 100px
+	align-content: center
+	.cop
+		text-align: center
+		span
+			align-items: center
+
+.timer-grid
+	grid-template-areas: "tm tm" "mn sc"
+	max-width: 240px
+	margin-bottom: 15px
+	.min
+		grid-area: mn
+		font-size: 14px
+	.sec
+		grid-area: sc
+		font-size: 14px
+
+
+.timer
+	font-size: 45px
+	color: black
+	grid-area: tm
+	font-family: "roboto-black", sans-serif
+	span
+		display: inline-block
+		background-color: white
+		width: 80px
+		text-align: center
+	div
+		display: inline-block
+
+.main-head-prom
+	background-size: cover
+	background-position: center
+	position: relative
+	align-content: center
+	color: white
+	.header-content
+		z-index: 1
+		display: grid
+		grid-template-areas: "lg tel"
+	&::before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: $accent
+		opacity: .92
+
+.tel
+	z-index: 1
+	max-width: 1000px
+	padding-left: 20px
+	padding-right: 20px 
+	padding-bottom: 20px
+	margin-top: 30px
+	margin-left: auto
+	justify-content: right
+	color: white
+	text-align: right
+	grid-area: tel		
+
+.cong
+	text-align: center
+	min-height: 80vh
+
+ul
+	padding: 0
+	list-style: none
+	counter-reset: li
+	li
+		position: relative
+		border-left: 3px solid $but
+		padding: 1px 20px 1px 12px
+		margin: 1px 0 12px 25px
+		-webkit-transition-duration: 0.3s
+		transition-duration: 0.3s
+		&::before
+			line-height: 16px
+			position: absolute
+			top: 5px
+			left: -80px
+			width: 120px
+			text-align: center
+			font-size: 20px
+			font-weight: bold
+			color: $but
+			counter-increment: li
+			content: counter(li)
+			-webkit-transition-duration: 0.3s
+			transition-duration: 0.3s
+			-webkit-box-sizing: border-box
+			-moz-box-sizing: border-box
+			box-sizing: border-box
+			vertical-align: middle
+
+
+button
+	display: inline-block
+	border: none
+	color: #fff
+	text-decoration: none
+	background-color: $but
+	padding: 10px 60px
+	font-size: 20px
+	font-weight: 400
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	cursor: pointer
+	&::after
+		transition: background-color .2s ease
+		position: absolute
+		content: ''
+		height: 4px
+		bottom: 0
+		width: 100%
+		background-color: darken($accent, 50%)
+		opacity: .18
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		left: 0
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: lighten($accent, 5%)
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken($accent, 5%)
+		&::after
+			opacity: .32
+
+
+
+
+@import "media" // Всегда в конце
