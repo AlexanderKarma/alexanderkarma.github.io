@@ -14,22 +14,16 @@
 	padding-left: 10px
 	margin-right: auto
 	margin-left: auto
+	overflow-x: hidden
 
 .main-head
+	position: relative
 	background-size: cover
 	background-position: center
 	position: relative
 	align-content: center
 	color: white
-	&::before
-		content: ""
-		position: absolute
-		top: 0
-		left: 0
-		right: 0
-		bottom: 0
-		background-color: $accent
-		opacity: .92
+	overflow: hidden
 
 .header-content
 	z-index: 1
@@ -41,22 +35,40 @@
 	padding-left: 10px
 	margin-right: auto
 	margin-left: auto
+	img
+		position: absolute
+		bottom: 0
+		right: auto
+		opacity: .45
 	.logo
-		margin-top: auto
+		margin-top: 15px
 		margin-bottom: auto
 		margin-right: 0
 		float: left
+		font-family: roboto-bold, sans-serif
+		font-weight: bold
+		font-size: 34px
 		z-index: 1
 		grid-area: lg
 	.content
 		z-index: 1
 		grid-area: con
+	&::before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: $accent
+		opacity: .92
 
 .content
 	max-width: 1000px
 	padding-left: 20px
 	padding-right: 20px 
 	padding-bottom: 20px
+	padding-top: 20px
 	margin-top: auto
 	margin-right: auto
 	margin-left: auto
@@ -66,8 +78,46 @@
 	min-height: 60vh
 	align-content: center
 	text-align: center
-	ul
-		text-align: left
+	.grid
+		padding-top: 15px
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
+		grid-template-areas: "ls1  ls1  ls2  ls2  ls3  ls3 " ". ls4  ls4  ls5  ls5  ."
+		grid-gap: 30px
+	.list1
+		max-width: 335px
+		margin-left: auto
+		margin-right: auto
+		grid-area: ls1
+		img
+			fill: gray
+	.list2
+		max-width: 335px
+		margin-left: auto
+		margin-right: auto
+		grid-area: ls2
+		img
+			fill: gray
+	.list3
+		max-width: 335px
+		margin-left: auto
+		margin-right: auto
+		grid-area: ls3
+		img
+			fill: gray
+	.list4
+		max-width: 335px
+		margin-left: auto
+		margin-right: auto
+		grid-area: ls4
+		img
+			fill: gray
+	.list5
+		max-width: 335px
+		margin-left: auto
+		margin-right: auto
+		grid-area: ls5
+		img
+			fill: gray
 
 .intro
 	display: grid
@@ -81,34 +131,80 @@
 	overflow: hidden
 	.content
 		grid-template-columns: 60% 40%
+		grid-template-areas: "mk-h mk-h" "mk-l mk-i" "mk-b mk-i"
 		align-content: center
 		min-height: 60vh
 		padding-bottom: 0px
+	h3
+		grid-area: mk-h
 	img
 		max-height: 500px
-	button
+		grid-area: mk-i
+	a
 		margin-bottom: 15px
+		grid-area: mk-b
+		min-width: 300px
+	.mk-list
+		grid-area: mk-l
+	.list2
+		vertical-align: center
+		margin-bottom: 15px
+		span
+			margin-left: 20px
+			position: absolute
+
+.foru
+	overflow-x: hidden
+
+	.cube-x
+		width: 100%	
+		.cube1
+			position: relative
+			float: right
+			img
+				position: absolute
+				right: -250px
+		.cube2
+			position: absolute
+			left: -250px
+			padding-top: 250px
 
 .content
 	.points
 		justify-content: center
 		min-height: 50vh
+		text-align: center
+		.grid
+			grid-template-columns: 1fr 1fr 1fr
+			grid-gap: 20px
+			max-width: 800px
+			margin-right: auto
+			margin-left: auto
+		.list3
+			z-index: 1
+			background-color: $accent
+			color: white
+			text-align: center
+			max-width: 250px
+			box-shadow: 3px 3px 6px -3px black
+			img
+				padding-top: 15px
+			p
+				margin-left: 10px
+				margin-right: 10px
 
 .about
 	justify-content: center
 	h2
 		text-align: center
 	.img
-		display: inline-block
+		//display: inline-block
 		text-align: center
+		padding-top: 20px
 	img
 		max-height: 300px
 	.about-grid
 		grid-template-columns: 40% 60%
-	li
-		position: relative
-		border-left: 3px solid $but
-		&::before
 
 
 .review
@@ -122,8 +218,7 @@
 		grid-gap: 20px
 		grid-template-columns: 1fr 1fr 1fr
 		.rev-1
-			display: grid
-			grid-template-areas: "ph nm" "ph pr" "lr lr"
+			text-align: center
 			min-height: 400px
 			padding-left: 20px
 			padding-right: 20px 
@@ -131,18 +226,21 @@
 			margin-right: auto
 			margin-left: auto
 			border-radius: 1px
-			box-shadow: 1px 1px 1px 2px #0912b2
 			.photo
 				grid-area: ph
 				img
-					max-width: 100px
+					width: 100px
+					height: 100px
+					border-radius: 100px
 			.name
 				grid-area: nm
 				margin: 0
+				margin-top: 15px
 				font-size: 18px
 			.prof
 				grid-area: pr
 				margin: 0
+				margin-top: 10px
 				font-size: 15px
 			.lor
 				grid-area: lr
@@ -174,6 +272,7 @@
 	grid-template-areas: "tm tm" "mn sc"
 	max-width: 240px
 	margin-bottom: 15px
+	text-align: center
 	.min
 		grid-area: mn
 		font-size: 14px
@@ -238,29 +337,12 @@ ul
 	counter-reset: li
 	li
 		position: relative
-		border-left: 3px solid $but
+		border-left: 6px solid $accent
 		padding: 1px 20px 1px 12px
 		margin: 1px 0 12px 25px
 		-webkit-transition-duration: 0.3s
 		transition-duration: 0.3s
-		&::before
-			line-height: 16px
-			position: absolute
-			top: 5px
-			left: -80px
-			width: 120px
-			text-align: center
-			font-size: 20px
-			font-weight: bold
-			color: $but
-			counter-increment: li
-			content: counter(li)
-			-webkit-transition-duration: 0.3s
-			transition-duration: 0.3s
-			-webkit-box-sizing: border-box
-			-moz-box-sizing: border-box
-			box-sizing: border-box
-			vertical-align: middle
+		box-shadow: 0 2px 5px -2px black
 
 
 button
@@ -302,7 +384,45 @@ button
 		&::after
 			opacity: .32
 
+.overlay
+	position: fixed
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	background: rgba(0, 0, 0, 0.7)
+	transition: opacity 500ms
+	visibility: hidden
+	opacity: 0
+.show
+	visibility: visible
+	opacity: 1
 
+.popup 
+  margin: 70px auto
+  padding: 20px
+  background: #fff
+  border-radius: 5px
+  width: 30%
+  position: relative
+  transition: all 5s ease-in-out
 
+.popup .close 
+  position: absolute
+  top: 20px
+  right: 30px
+  transition: all 200ms
+  font-size: 30px
+  font-weight: bold
+  text-decoration: none
+  color: #333
+
+.popup .close:hover 
+  color: #06D85F
+
+.popup 
+	.content 
+		max-height: 30%
+		overflow: auto
 
 @import "media" // Всегда в конце

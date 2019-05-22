@@ -28,11 +28,28 @@
 	.intro		
 		grid-template-columns: 1fr
 
+	.master
+		.grid
+			text-align: center
+			margin-left: auto
+			margin-right: auto
+			grid-template-columns: 1fr
+			grid-template-areas: "ls1" "ls2" "ls3" "ls4" "ls4" "ls5" "ls5"
+
 	.aft-mk
 		.content
-			grid-template-columns: 1fr
-		img
-			display: none
+			grid-template-columns: 60% 40%
+			.list2
+				padding-bottom: 15px
+
+	.content
+		.points
+			.grid
+				grid-template-columns: 1fr
+				align-content: center
+			.list3
+				margin-right: auto
+				margin-left: auto
 
 	.about
 		.content

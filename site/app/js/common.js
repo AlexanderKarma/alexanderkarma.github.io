@@ -46,3 +46,7 @@ window.onload = function () {
     startTimer(fiveMinutes, display1, display2, display3, display4);
 };
 
+function myFunction() {
+  var popup = document.getElementById("popup1");
+  popup.classList.toggle("show");
+}
