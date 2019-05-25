@@ -334,20 +334,64 @@ a
 .cong
 	text-align: center
 	min-height: 80vh
+	p
+		text-align: left
+	iframe
+		width: 700px
+		height: 400px
 
-ul
-	padding: 0
-	list-style: none
-	counter-reset: li
-	li
-		position: relative
-		border-left: 6px solid $accent
-		padding: 1px 20px 1px 12px
-		margin: 1px 0 12px 25px
-		-webkit-transition-duration: 0.3s
-		transition-duration: 0.3s
-		box-shadow: 0 2px 5px -2px black
+.about-grid
+	ul
+		padding: 0
+		list-style: none
+		counter-reset: li
+		li
+			position: relative
+			border-left: 6px solid $accent
+			padding: 1px 20px 1px 12px
+			margin: 1px 0 12px 25px
+			-webkit-transition-duration: 0.3s
+			transition-duration: 0.3s
+			box-shadow: 0 2px 5px -2px black
 
+.button
+	display: inline-block
+	border: none
+	color: #fff
+	text-decoration: none
+	background-color: $but
+	padding: 10px 60px
+	font-size: 20px
+	font-weight: 400
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	cursor: pointer
+	&::after
+		transition: background-color .2s ease
+		position: absolute
+		content: ''
+		height: 4px
+		bottom: 0
+		width: 100%
+		background-color: darken($accent, 50%)
+		opacity: .18
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		left: 0
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: lighten($accent, 5%)
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken($accent, 5%)
+		&::after
+			opacity: .32
 
 button
 	display: inline-block
@@ -397,7 +441,7 @@ button
   top: 0
   width: 100% /* Full width */
   height: 100% /* Full height */
-  overflow: auto /* Enable scroll if needed */
+  overflow: hidden /* Enable scroll if needed */
   background-color: rgb(0,0,0) /* Fallback color */
   background-color: rgba(0,0,0,0.4) /* Black w/ opacity */
 
@@ -407,7 +451,18 @@ button
   margin: 15% auto /* 15% from the top and centered */
   padding: 20px
   border: 1px solid #888
-  width: 80% /* Could be more or less, depending on screen size */
+  max-width: 500px
+  color: black
+  .newform
+  	margin-right: auto
+  	margin-left: auto
+  	margin-top: 30px
+  	display: grid
+  	grid-template-columns: 1fr 1fr
+  	label
+  		margin-left: 10px
+  	input
+  		margin-top: 30px
 
 /* The Close Button */
 .close
