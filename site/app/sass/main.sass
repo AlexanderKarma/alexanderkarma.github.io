@@ -127,6 +127,22 @@ a
 	display: grid
 	grid-template-columns: 60% 40%
 	grid-gap: 25px
+	.intro-right
+		padding-left: 30px
+		.forma
+			.f-con
+				display: grid
+				grid-template-columns: 25% 85%
+				padding-bottom: 15px
+				label
+					vertical-align: middle
+					margin-bottom: auto
+					margin-top: auto
+				input
+					height: 35px
+					padding-bottom: 30px
+					margin-bottom: auto
+					margin-top: auto
 
 .aft-mk
 	padding-left: 30px
@@ -234,8 +250,8 @@ a
 				grid-area: ph
 				img
 					width: 100px
-					height: 100px
 					border-radius: 100px
+					object-fit: contain
 			.name
 				grid-area: nm
 				margin: 0
@@ -354,6 +370,27 @@ a
 			transition-duration: 0.3s
 			box-shadow: 0 2px 5px -2px black
 
+.cour-vid
+	background-color: #5D5D5D
+	width: 100%
+
+.comments
+	max-width: 800px
+	margin-left: auto
+	margin-right: auto
+
+.howo
+	background-color: $accent
+	margin-left: auto
+	margin-right: auto
+	padding-left: 45px
+	padding-right: 45px
+	padding-top: 15px
+	padding-bottom: 15px
+	border-radius: 14px
+	max-width: 700px
+	color: white		
+
 .button
 	display: inline-block
 	border: none
@@ -459,8 +496,6 @@ button
   	margin-top: 30px
   	display: grid
   	grid-template-columns: 1fr 1fr
-  	label
-  		margin-left: 10px
   	input
   		margin-top: 30px
 
@@ -476,5 +511,76 @@ button
   color: black
   text-decoration: none
   cursor: pointer
+
+.prog
+	h2
+		text-align: center
+	.grid
+		margin-left: auto
+		margin-right: auto
+		max-width: 700px
+		grid-template-columns: 20% 1fr
+
+// Style the tab
+
+.tab-grid
+	display: grid
+	grid-template-columns: 1fr
+
+.tab
+  overflow: hidden
+  background-color: #fff
+  max-height: 200px
+  button
+    background-color: $accent
+    float: left
+    border: none
+    outline: none
+    cursor: pointer
+    padding: 14px 16px
+    transition: 0.3s
+    font-size: 17px
+    border-radius: 0px
+    &::after
+      transition: background-color .2s ease
+      position: absolute
+      content: ''
+      height: 4px
+      bottom: 0
+      width: 100%
+      background-color: darken($accent, 50%)
+      opacity: .18
+      border-bottom-left-radius: 2px
+      border-bottom-right-radius: 2px
+      left: 0
+    &:hover
+      background-color: $but
+    &.active
+      background-color: $but
+
+.tabcontent
+  min-height: 440px
+  display: none
+  padding: 6px 12px
+  border: 2px solid $accent
+  box-shadow: 0 2px 5px -2px black
+  ul
+    padding: 0
+    list-style: none
+    counter-reset: li
+    li
+      position: relative
+      padding: 1px 20px 1px 12px
+      margin: 1px 0 12px 25px
+      &:before
+        content:  "—"
+        position: relative
+        left: -15px
+
+
+
+ 
+
+
 
 @import "media" // Всегда в конце
